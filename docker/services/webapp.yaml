@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build:
+      context:  ../../services/webapp
+    command: npm run dev
+    volumes:
+      - ../../services/webapp:/app
+    environment:
+      - VITE_API_URL=${API_URL}
+    ports:
+      - "${WEBAPP_PORT}:5173"
